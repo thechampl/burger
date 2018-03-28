@@ -1,21 +1,39 @@
+<div class="jumbotron">
 <h1>MAKE A BURGER</h1>
-
-<ul>
-  {{#each burger}}
+</div>
+<div class="container col-md-12">
+  <div class="col-md-5">
+  <h2>Burgers to eat!</h2>
+  <ul>
+    {{#each burger}} {{#unless this.devoured}}
     <li>
       <p>
-        {{this.id}}. {{this.burger_name}} 
+        {{this.burger_name}} 
 
       </p>
     </li>
-  {{/each}}
+    {{/unless}} {{/each}}
+  </ul>
+</div>
+
+
+<div class="col-md-5">
+  <h2>Burgers DEVOURED</h2>
+<ul>
+  {{#each burger}} {{#if this.devoured}}
+  <li>
+    <p>
+    {{this.burger_name}} 
+
+    </p>
+  </li>
+  {{/if}} {{/each}}
 </ul>
+</div>
+</div>
 
 <h2>Add a Burger</h2>
-<form id="addburger" class="button-size">
-	<textarea type="text" name="burger"></textarea>
-	<button type="submit">Add this Burger!</button>
+<form action="/api/burgers" method="POST" id="addburger" class="button-size">
+  <textarea type="text" name="burger_name" devoured="false"></textarea>
+  <button type="submit">Add this Burger!</button>
 </form>
-
-
-

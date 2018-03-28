@@ -26,10 +26,11 @@ router.get("/", function (req, res) {
         burger.create([
           "burger_name", "devoured"
         ], [
-          req.body.burger_name, req.body.devoured
+          req.body.burger_name, false
         ], function(result) {
           // Send back the ID of the new quote
-          res.json({ id: result.insertId });
+          //res.json({ id: result.insertId });
+          res.redirect("/")
         });
       });
 
