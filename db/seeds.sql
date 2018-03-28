@@ -1,3 +1,3 @@
-INSERT INTO burgers (burger_name, devoured) VALUES ('BIG MAC', false);
-INSERT INTO burgers (burger_name, devoured) VALUES ('QUARTER POUNDER', false);
-INSERT INTO burgers (burger_name, devoured) VALUES ('SMASHBURGER', false);
+INSERT INTO burgers (burger_name) VALUES ('BIG MAC');
+INSERT INTO burgers (burger_name) VALUES ('QUARTER POUNDER');
+INSERT INTO burgers (burger_name) VALUES ('SMASHBURGER');

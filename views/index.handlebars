@@ -4,7 +4,7 @@
   {{#each burger}}
     <li>
       <p>
-        {{this.id}}. {{this.burger_name}} . {{this.devoured}}
+        {{this.id}}. {{this.burger_name}} 
 
       </p>
     </li>
@@ -18,31 +18,4 @@
 </form>
 
 
-<script type="text/javascript">
-  
 
-  $("#addmovie").on("submit", function(event) {
-    // Make sure to preventDefault on a submit event.
-    event.preventDefault();
-
-    var newBurger = {
-      movie: $("#addburger [name=burger]").val().trim()
-    };
-
-    // Send the POST request.
-    $.ajax("/burger", {
-      type: "POST",
-      data: newBurger
-    }).then(
-      function() {
-        console.log("added new movie");
-        // Reload the page to get the updated list
-        location.reload();
-      }
-    );
-  });
-
-  
-
-   
-</script>

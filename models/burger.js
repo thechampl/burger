@@ -1,11 +1,24 @@
 var orm= require ("../config/orm.js");
 
-orm.selectAll("burgers");
+var burger = {
+    selectAll: function(cb) {
+        orm.selectAll("burgers", function(res){
+            cb(res);
+        });
+    },
+    update: function(objColVals, condition, cb) {
+        orm.update("burgers", objColVals, condition, function(res) {
+          console.log(res);
+          cb(res);
+        });
+      },
+      create: function(cols, vals, cb) {
+        orm.create("burgers", cols, vals, function(res) {
+          cb(res);
+        });
+      },
+    };
 
 
-// update with onclick function and var burgername
-orm.insertOne("burgers", burgerName, false);
-
-orm.updateOne("burgers", "burger_name", burger_name, "devoured", true, onclick);
 
 module.exports = burger
