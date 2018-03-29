@@ -6,6 +6,8 @@ $("#addburger").on("submit", function(event) {
     burger_name: $("#addburger [name=burger]").val().trim()
   };
 
+
+  }
   // Send the POST request.
   $.ajax("/burger", {
     type: "POST",
@@ -20,26 +22,5 @@ $("#addburger").on("submit", function(event) {
 });
 
 
-$(function() {
-    $(".change-devour").on("click", function(event) {
-      var id = $(this).data("id");
-      var newDevour = $(this).data("newDevour");
-  
-      var newDevourState = {
-        devour: newDevour
-      };
-  
-      // Send the PUT request.
-      $.ajax("/api/burgers/" + id, {
-        type: "PUT",
-        data: newDevourState
-      }).then(
-        function() {
-          console.log("I ate the BURGER", newDevour);
-          // Reload the page to get the updated list
-          location.reload();
-        }
-      );
-    });
- 
-});
+
+    
